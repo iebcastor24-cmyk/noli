@@ -1,0 +1,300 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 16px;
+  padding: 1.6px;
+  background-color: #e2c586;
+  color: #040404;
+  overflow-x: hidden;
+}
+
+body p {
+  text-align: justify;  
+  line-height: 1.6;     
+  margin-bottom: 15px;  
+}
+
+body.eli strong {
+  color: #c8a95a; 
+}
+
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 40px 20px;
+}
+
+.left-column {
+  flex: 0 0 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.profile-pic {
+  width: 450px;
+  height: 450px;
+  object-fit: cover;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+h1 {
+  color: #000000;
+  font-size: 28px;
+  margin: 15px 0 5px 0;
+}
+
+.tagline {
+  font-size: 14px;
+  color: #000000;
+}
+
+.right-column {
+  flex: 1;
+  padding-right: 10px;
+}
+
+section {
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: fadeIn 0.8s forwards;
+}
+
+section:nth-of-type(1){ animation-delay: 0.2s; }
+section:nth-of-type(2){ animation-delay: 0.4s; }
+section:nth-of-type(3){ animation-delay: 0.6s; }
+
+section h2 {
+  color: #000000;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+section ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.skill-item {
+  cursor: pointer;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.skill-item:hover {
+  color: #c85a7c;
+  transform: translateX(5px);
+}
+
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  text-align: left;
+}
+
+
+.project-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 25px;
+  padding-left: 10px;
+}
+
+.project-pic {
+  width: 280px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-item {
+    margin-bottom: 30px; /* space below each project */
+}
+
+.project-pic {
+    display: block;       /* ensures margin works well */
+    width: 100%;          /* optional: make images full width of container */
+    max-width: 300px;     /* optional: limit image size */
+    margin-bottom: 10px;  /* space between image and description */
+}
+
+.project-pic:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* removed invalid character */
+}
+
+
+
+.project-name {
+  text-align: center;   /* centers the name */
+  font-size: 18px;      /* adjust size as needed */
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.project-description {
+  display: none;
+  flex: 1;
+  padding: 16px;
+  border-radius: 10px;
+  color: #060606;
+  line-height: 1.6;
+  text-align: justify; 
+}
+
+
+.project-description.show {
+  display: block;
+
+}
+
+footer {
+  position: relative;
+  padding: 60px 20px;
+  border-top: 3px solid #c85a7c;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  box-shadow: 0 -3px 10px rgba(0,0,0,0.05);
+  overflow: hidden;
+  border-radius: 0 0 20px 20px;
+  background-color: #c85a7c; 
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.15); 
+  z-index: 0;
+  border-radius: 0 0 20px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-item {
+  font-size: 16px;
+  text-align: center;
+}
+
+.footer-item a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.footer-item a:hover {
+  transform: translateY(-2px);
+}
+
+#skill-comment {
+  font-style: italic;
+}
+
+@media screen and (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .project-item {
+    flex-direction: column;
+    align-items: left;
+  }
+
+  .project-description {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .project-pic {
+    width: 100%;
+    height: auto;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+  }
+}
+
+.extra-characters-footer {
+  width: 100%;
+  color: rgb(0, 0, 0);
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 12px;
+}
+
+.extra-characters-footer h3 {
+  margin-bottom: 10px;
+}
+
+.name-list {
+  list-style: none;
+  padding-right: 50;
+  columns: 1;     /* 👈 ginawang dalawang column */
+}
+
+.name-list li {
+  margin: 8px 0;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.name-list li:hover {
+  color: yellow;
+}
+
+.info-box {
+  display: none;
+  margin-top: 15px;
+  padding: 12px;
+  background-color: #f4f4f4;
+  border-left: 4px solid #8b0000;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.name-list li {
+  cursor: pointer;
+  margin: 6px 0;
+}
+
+.name-list li:hover {
+  color: #8b0000;
+}
